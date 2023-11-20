@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="portfolio.css" />
+  </head>
+
+  <body>  
+
+    <div class="loader">
+        <span class="lettre">M</span>
+        <span class="lettre">a</span>
+        <span class="lettre">t</span>
+        <span class="lettre">h</span>
+        <span class="lettre">i</span>
+        <span class="lettre">e</span>
+        <span class="lettre">u</span>
+
+        <span class="lettre">F</span>
+        <span class="lettre">e</span>
+        <span class="lettre">r</span>
+        <span class="lettre">r</span>
+        <span class="lettre">e</span>
+        <span class="lettre">i</span>
+        <span class="lettre">r</span>
+        <span class="lettre">a</span>
+
+
+
+        <div class="ball"></div>
+
+
+    </div>        
+
+
+    <nav id="nav">
+      <ul>
+        <li><a class="nav-link" href="#section1">Mathieu<br>Ferreira</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a class="nav-link" href="#experience">Experience</a></li>
+        <li><a class="nav-link" href="#education">Education</a></li>
+        <li><a class="nav-link" href="#projet">Project</a></li>
+        <li><a class="nav-link" href="#skills">Skills</a></li>
+        <li><a class="nav-link" href="#contacts">Contacts</a></li>
+        <li><button type="button" class="toggle" id="BUTTON"></button></li>
+      </ul>
+    </nav>
+
+    <section id="section1">
+      <div class="main-left">
+        <section class="home">
+            <div class="container">
+               <div class="row">
+                   <div class="home-text">
+                        <p class="animate-text">
+                           <span>Student Engineer</span>
+                           <span>Polytech Annecy</span>
+                           <span>Informatique Données Usages</span>
+                        </p>
+                   </div>
+               </div>
+            </div>
+        </section>
+        <div id="name">
+            Mathieu
+
+        </div>
+        <div id="surname">
+            Ferreira
+
+        </div>
+        <li><a href="./autres/pdf/CV 2023-4.pdf" target="_blank" id="cv" >View my CV</a></li>
+      </div>
+    </section>
+
+    <div id="container">
+        <div id="littlecircle">
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="300px" height="300px" viewBox="0 0 300 300" enable-background="new 0 0 300 300" xml:space="preserve">
+                <defs>
+                    <path id="circlePath" d="M 150, 150 m -60, 0 a 60,60 0 0,1 120,0 a 60,60 0 0,1 -120,0 "/>
+                </defs>
+                <circle cx="150" cy="100" r="75" fill="none"/>
+                <g>
+                    <use xlink:href="#circlePath" fill="none"/>
+                    <text fill="#ffffff">
+                        <textPath xlink:href="#circlePath" id="textpath">Scroll to discover - Scroll to Discover -</textPath>
+                    </text>
+                </g>
+            </svg>
+        </div>
+    </div>
+
+    <div id="video">
+        <div id="video-container">
+            <video id ="animation" autoplay loop muted src="./autres/circles_-_81095 (Original).mp4">
+            </video>
+            <div id="about">
+                <h1>ABOUT ME</h1>
+                <div class="about-content">
+                    <div class="about-left">
+                        <p>I am a fourth year engineering student at Polytech Annecy in "Informatique Données Usages". I'm looking for a 6-week to 3-month internship in the computing field.</p>
+                    </div>
+                    <div class="about-right">
+                        <div class="title">
+                            <p>Interets</p>
+                        </div>
+                        <div class="interets">
+                            <div class="ileft">
+                                <p>Drawing</p>
+                                <p>Sports</p>
+                                <p>Martial Arts</p>
+                            </div>
+                            <div class="iright">
+                                <p>Architecture</p>
+                                <p>Cinema</p>
+                                <p>Puzzles</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="experience">
+        <h1>WORK EXPERIENCE</h1>
+    </div>
+    <div id="experience_carrousel">
+
+            
+            <div class="container_work">
+
+
+                <input type="radio" name="slider" class="d-none" id="s1" checked>
+                <input type="radio" name="slider" class="d-none" id="s2">
+                <input type="radio" name="slider" class="d-none" id="s3">
+                <input type="radio" name="slider" class="d-none" id="s4">
+                <input type="radio" name="slider" class="d-none" id="s5">
+            
+                <div class="cards">
+                <label for="s1" id="slide1" class="slide">
+                    <div class="card" id="card1">
+                        <div class="image">
+                            <img src="./autres/logo-Maison-Puigrenier.png" alt="">
+                        </div>
+                        <div class="infos">
+                            <span class="name">Puigrenier employee</span>
+                            <span class="lorem"><span font-style="italic"><i>(summer 2023)</i></span>Cold work<br>
+                            Product collection of meat</span>
+                        </div>
+                    </div>
+                </label>
+            
+                <label for="s2" id="slide2" class="slide">
+                    <div class="card">
+                    <div class="image">
+                        <img src="./autres/CRUZILLES-OK.png" alt="">
+                    </div>
+                    <div class="infos">
+                        <span class="name">Cruzilles employee</span>
+                        <span class="lorem"><i>(summer 2022)</i></span>Packaging<br>
+                        Product collection</span>
+                    </div>
+                    </div>
+                </label>
+            
+                <label for="s3" id="slide3" class="slide">
+                    <div class="card">
+                    <div class="image">
+                        <img src="./autres/clermont-removebg-preview.png" alt="">
+                    </div>
+                    <div class="infos">
+                        <span class="name">Truck emptying</span>
+                        <span class="lorem"><i>(summer 2022)</i></span>Working in hot conditions<br>
+                        Product classification and storage</span>
+                    </div>
+                    </div>
+                </label>
+            
+                <label for="s4" id="slide4" class="slide">
+                    <div class="card">
+                    <div class="image">
+                        <img src="./autres/logo-leclerc.png" alt="">
+                    </div>
+                    <div class="infos">
+                        <span class="name">Leclerc employee</span>
+                        <span class="lorem"><i>(15/07/21-28/08/21)</i></span>Liquids shelving<br>
+                        Night time, before opening</span>
+                    </div>
+                    </div>
+                </label>
+            
+                <label for="s5" id="slide5" class="slide">
+                    <div class="card">
+                    <div class="image">
+                        <img src="./autres/logo-Maison-Puigrenier.png" alt="">
+                    </div>
+                    <div class="infos">
+                        <span class="name">Production operator</span>
+                        <span class="lorem"><i>(31/05/21-03/07/2021)</i></span>Cold work<br>
+                        Labeling of meat trays</span>
+                    </div>
+                    </div>
+                </label>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="education_container" id="education">
+            <div class="left-panel">
+                <div class="vertical-line borderRadius1 school1">
+                    <div class="dot"></div>
+                    <div class="text">
+                        <span class="education_name">Polytech Annecy</span><br>
+                        <span class="lorem">
+                            <i>(2022-now)</i><br>
+                        </span>Engineering cycle / Informatique Donnée Usages</span>
+                    </div>
+                </div>
+                <div class="vertical-line school2">
+                    <div class="dot"></div>
+                    <div class="text">
+                        <span class="education_name">Polytech Clermont</span><br>
+                        <span class="lorem">
+                            <i>(2020-2022)</i><br>
+                        </span>Integrated preparatory classes for engineering schools</span>
+                    </div>
+                </div>
+                <div class="vertical-line borderRadius2 school3">
+                    <div class="dot"></div>
+                    <div class="text">
+                        <span class="education_name">High school Marguerite de Navarre, Bourges</span><br>
+                        <span class="lorem">
+                            <i>(2020)</i><br>
+                        </span>Scientific Baccalaureate</span>
+                    </div>
+                </div>
+            </div>
+            <div class="right-panel">
+                EDUCATION
+            </div>
+        </div>
+
+        <div class="projet" id ="projet">
+            <div class="texte-projet">
+                <div class="texte-content">
+                    <p class="proj-text-school">SCHOOL</p>
+                    <p class="proj-text-project">PROJECTS</p>
+                </div>
+            </div>
+            <div class="boite-projet">
+                <!-- <div class="black"></div> -->
+                <div class="proj-container">
+                    <div class="blocHorizontal">
+                        <div class="proj-slide one">SCROLL ME</div>
+                        <div class="proj-slide two">Slide 2</div>
+                        <div class="proj-slide three">Slide 3</div>
+                        <div class="proj-slide four">Slide 4</div>
+                    </div>
+                </div>
+            </div>
+            <div class="proj-black"></div>
+        </div>
+
+        <div class="skills" id="skills">
+            <div class="haut">
+                <div class="skills-text">
+                    SKILLS
+                </div>
+                <div class="languages">
+                    <div class="round french">
+                        <p class="french-txt">French <br> Native</p>
+                    </div>
+                    <div class="round english">
+                        <p class="english-txt">English <br> B2</p>
+                    </div>
+                    <div class="round spanish">
+                        <p class="spanish-txt">Spanish <br> A2</p>
+                    </div>
+                </div>
+            </div>
+            <div class="bas">
+                <div class="graph">
+                    <div id="histogramWrapper">
+                        <ul id="soldChart" class="addedStyles">
+                        </ul>
+                      </div>                  
+                </div>
+                <div class="logiciel">
+                    <div class="images-logiciel">
+                        <img class="im1" src="./logiciel/62b1fefc8309c32ce1623ded.png" alt="">
+                        <img class="im2" src="./logiciel/Figma-logo.svg" alt="">
+                        <img class="im3" src="./logiciel/Git-Icon-1788C.png" alt="">
+                        <img class="im4" src="./logiciel/Notion-logo.svg.png" alt="">
+                        <img class="im5" src="./logiciel/SketchUp-Logo.png" alt="">
+                        <img class="im6" src="./logiciel/tableau-software.svg" alt="">
+                        <img class="im7" src="./logiciel/unnamed.png" alt="">
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+        <div class="contacts" id="contacts">
+            <div class="contacts-gauche">
+                <p class="txt-contacts">CONTACTS</p>
+                <p class="txt-based">Based in France</p>
+            </div>
+            <div class="contacts-droite">
+                <p class="email"><a href="mailto:mathieu.ferreira18@gmail.com">mathieu.ferreira18@gmail.com</a></p>
+                <p class="num"><a href="tel:+783082865">(+33) 7 83 08 28 65</a></p>
+                <p class="linkedin"><a href="https://www.linkedin.com/in/mathieu-ferreira-706b29268/" target="_blank">Linkedin</a></p>
+            </div>
+        </div>
+
+        <div class="back">
+            <a class="backToTopButton" href="#">Back to the top</a>
+        </div>
+
+        
+
+
+    <footer>
+    </footer>
+
+    <script src="./portfolio.js"></script>
+  </body>
+</html>
