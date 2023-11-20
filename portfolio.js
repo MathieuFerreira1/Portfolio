@@ -205,25 +205,28 @@ function easeOutCubic(t) {
 }
 
 function updateStyles() {
-  const scrollY = window.scrollY;
-  const windowHeight = window.innerHeight;
-  const videoContainerTop = videoContainer.getBoundingClientRect().top;
-
-  let progress;
-
-  if (scrollY > videoContainerTop) {
-    progress = Math.min((scrollY - videoContainerTop) / windowHeight, 1);
-  } else {
-    progress = 0;
+  if (window.innerWidth > 900){
+    const scrollY = window.scrollY;
+    const windowHeight = window.innerHeight;
+    const videoContainerTop = videoContainer.getBoundingClientRect().top;
+  
+    let progress;
+  
+    if (scrollY > videoContainerTop) {
+      progress = Math.min((scrollY - videoContainerTop) / windowHeight, 1);
+    } else {
+      progress = 0;
+    }
+  
+    progress = easeOutCubic(progress); // Appliquer la fonction de lissage
+  
+    const interpolatedTransform = `translate3d(${(1 - progress) * 15}%, ${progress * 18}%, 0px) scale3d(${(1 - progress) * 0.7 + progress * 1}, ${(1 - progress) * 0.7 + progress * 1}, 1)`;
+    const interpolatedOpacity = startOpacity + (endOpacity - startOpacity) * progress;
+  
+    videoContainer.style.transform = interpolatedTransform;
+    videoContainer.style.opacity = interpolatedOpacity;
   }
 
-  progress = easeOutCubic(progress); // Appliquer la fonction de lissage
-
-  const interpolatedTransform = `translate3d(${(1 - progress) * 15}%, ${progress * 18}%, 0px) scale3d(${(1 - progress) * 0.7 + progress * 1}, ${(1 - progress) * 0.7 + progress * 1}, 1)`;
-  const interpolatedOpacity = startOpacity + (endOpacity - startOpacity) * progress;
-
-  videoContainer.style.transform = interpolatedTransform;
-  videoContainer.style.opacity = interpolatedOpacity;
 }
 
 window.addEventListener('scroll', updateStyles);
