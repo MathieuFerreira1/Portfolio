@@ -142,12 +142,14 @@ document.body.insertAdjacentHTML(
   // Ajouter un événement sur la fenetre (window) puis animer la position de ces ronds (top, left injecter "e")
   const circle = document.querySelectorAll("#circle");
   circle.forEach((c) => {
-    window.addEventListener("mousemove", (e) => {
+    if (window.innerWidth > 500){
+      window.addEventListener("mousemove", (e) => {
         c.style.display = 'block';
         c.style.left = e.pageX + "px";
         c.style.top = e.pageY + "px";
-      
     });
+    }
+
   });
 
 
@@ -170,10 +172,13 @@ link.addEventListener('mouseout', () => {
 
 const root = document.documentElement;
 
-var boton = document.getElementById('BUTTON');
+var boton1 = document.getElementById('BUTTON1');
+var boton2 = document.getElementById('BUTTON2');
 var body = document.querySelector('body');
-boton.addEventListener('click', () => {
-  boton.classList.toggle('active');
+
+boton1.addEventListener('click', () => {
+  boton1.classList.toggle('active');
+  boton2.classList.toggle('active');
   body.classList.toggle('dark');
   if (body.classList.contains('dark')){
     root.style.setProperty('--couleur-secondaire', 'black');
@@ -183,8 +188,64 @@ boton.addEventListener('click', () => {
     root.style.setProperty('--couleur-secondaire', 'white');
     root.style.setProperty('--couleur-principal', 'black');
   }
-  
+})
+
+boton2.addEventListener('click', () => {
+  boton1.classList.toggle('active');
+  boton2.classList.toggle('active');
+  body.classList.toggle('dark');
+  if (body.classList.contains('dark')){
+    root.style.setProperty('--couleur-secondaire', 'black');
+    root.style.setProperty('--couleur-principal', 'white');
+  }
+  else{
+    root.style.setProperty('--couleur-secondaire', 'white');
+    root.style.setProperty('--couleur-principal', 'black');
+  }
 });
+
+
+
+
+
+const burger = document.getElementById("BURGER");
+const navMax = document.querySelector(".nav-max");
+const burgerTop = document.querySelector(".burger-top");
+const burgerBottom = document.querySelector(".burger-bottom");
+const burgerMiddle = document.querySelector(".burger-middle");
+
+burger.addEventListener("click", () => {
+  burger.classList.toggle('burger-active');
+  if (burger.classList.contains('burger-active')){
+    navMax.style.top = '0';
+    burgerTop.style.transform = "rotate(45deg)";
+    burgerBottom.style.transform = "rotate(-45deg)";
+    burgerMiddle.style.opacity = '0';
+  }
+  else{
+    navMax.style.top = '-100vh';
+    burgerTop.style.transform = "rotate(0)";
+    burgerBottom.style.transform = "rotate(0)";
+    burgerMiddle.style.opacity = '1';
+  }
+})
+
+const link = document.querySelectorAll(".link");
+
+link.forEach(l => {
+  l.addEventListener('click', () => {
+    burger.classList.toggle('burger-active');
+    navMax.style.top = '-100vh';
+    burgerTop.style.transform = "rotate(0)";
+    burgerBottom.style.transform = "rotate(0)";
+    burgerMiddle.style.opacity = '1';
+  })
+})
+
+
+
+
+
 
 
 
@@ -205,7 +266,7 @@ function easeOutCubic(t) {
 }
 
 function updateStyles() {
-  if (window.innerWidth > 900){
+  if (window.innerWidth > 1100){
     const scrollY = window.scrollY;
     const windowHeight = window.innerHeight;
     const videoContainerTop = videoContainer.getBoundingClientRect().top;
@@ -267,19 +328,7 @@ window.addEventListener('scroll', () => {
 
 
 
-// const about = document.getElementById("about");
-// const just_video = document.getElementById("animation")
-// window.addEventListener('scroll', () => {
-//     if (window.scrollY > '650'){
-//     about.style.opacity = 1
-//     // animation.style.filter = 'blur(3px)';
-//     }
-//     else if (window.scrollY == 0){
 
-//     }else{
-//         about.style.opacity = 0
-//     }
-// })
 
 
 
@@ -617,3 +666,26 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
