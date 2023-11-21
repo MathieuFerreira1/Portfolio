@@ -142,7 +142,7 @@ document.body.insertAdjacentHTML(
   // Ajouter un événement sur la fenetre (window) puis animer la position de ces ronds (top, left injecter "e")
   const circle = document.querySelectorAll("#circle");
   circle.forEach((c) => {
-    if (window.innerWidth > 500){
+    if (window.innerWidth > 800){
       window.addEventListener("mousemove", (e) => {
         c.style.display = 'block';
         c.style.left = e.pageX + "px";
@@ -544,6 +544,10 @@ function handleScroll() {
     projTextSchool.style.transition = 'opacity 0.2s , transform 0.2s';
     projTextSchool.style.opacity = '1';
     projTextSchool.style.transform = 'translateY(0)';
+    if (window.innerWidth <= 500){
+      blocHorizontal.style.transition = 'opacity 0.2s';
+      blocHorizontal.style.opacity = '1';
+    }
   }
   if (isElementInViewport(projTextProject)){
     projTextProject.style.transition = 'opacity 0.2s , transform 0.2s';
@@ -560,19 +564,46 @@ function handleScroll() {
     skillsText.style.transform = 'translateY(0)';
   }
   if (isElementInViewport(french)){
+    if (window.innerWidth > 500){
     french.style.transition = '0.4s'
     french.style.width = '18vw';
     french.style.height = '18vw';
+    }
+    else {
+      french.style.transition = '0.4s'
+      french.style.width = '36vw';
+      french.style.height = '36vw';
+      french.style.marginLeft = '17vw';
+    }
   }
   if (isElementInViewport(english)){
-    english.style.transition = '0.4s'
-    english.style.width = '14vw';
-    english.style.height = '14vw';
+    if (window.innerWidth > 500){
+      english.style.transition = '0.4s'
+      english.style.width = '14vw';
+      english.style.height = '14vw';
+    }
+    else {
+      english.style.transition = '0.4s'
+      english.style.width = '28vw';
+      english.style.height = '28vw';
+      english.style.marginLeft = '53vw';
+      english.style.marginTop = '16vw';
+    }
   }
   if (isElementInViewport(spanish)){
-    spanish.style.transition = '0.4s'
-    spanish.style.width = '11vw';
-    spanish.style.height = '11vw';
+    if (window.innerWidth > 500){
+      spanish.style.transition = '0.4s'
+      spanish.style.width = '11vw';
+      spanish.style.height = '11vw';
+    }
+    else {
+      spanish.style.transition = '0.4s'
+      spanish.style.width = '22vw';
+      spanish.style.height = '22vw';
+      spanish.style.marginLeft = '35vw';
+      spanish.style.marginTop = '36vw';
+    }
+
   }
   if (isElementInViewport(graph)){
     graph.style.transition = 'opacity 0.2s';
