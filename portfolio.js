@@ -179,14 +179,17 @@ var body = document.querySelector('body');
 boton1.addEventListener('click', () => {
   boton1.classList.toggle('active');
   boton2.classList.toggle('active');
+  nav.classList.toggle('background');
   body.classList.toggle('dark');
   if (body.classList.contains('dark')){
     root.style.setProperty('--couleur-secondaire', 'black');
     root.style.setProperty('--couleur-principal', 'white');
+    root.style.setProperty('--body-principal', '#00000000');
   }
   else{
     root.style.setProperty('--couleur-secondaire', 'white');
     root.style.setProperty('--couleur-principal', 'black');
+    root.style.setProperty('--body-principal', '#000000');
   }
 })
 
@@ -194,13 +197,16 @@ boton2.addEventListener('click', () => {
   boton1.classList.toggle('active');
   boton2.classList.toggle('active');
   body.classList.toggle('dark');
+  nav.classList.toggle('background');
   if (body.classList.contains('dark')){
     root.style.setProperty('--couleur-secondaire', 'black');
     root.style.setProperty('--couleur-principal', 'white');
+    root.style.setProperty('--body-principal', '#00000000');
   }
   else{
     root.style.setProperty('--couleur-secondaire', 'white');
     root.style.setProperty('--couleur-principal', 'black');
+    root.style.setProperty('--body-principal', '#000000');
   }
 });
 
