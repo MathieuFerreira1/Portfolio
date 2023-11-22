@@ -80,6 +80,7 @@ html,body{
 
   .nav-min{
     display: none;
+    transition: all .5s ease-in-out;
   }
   .btn-burger{
     display: flex;
@@ -878,6 +879,7 @@ section.home{
   z-index: 2;
   position: relative;
   overflow: hidden;
+  transition: all .5s ease-in-out;
   /* border-radius: 3rem; */
 }
 
@@ -893,6 +895,7 @@ section.home{
   border-bottom-right-radius: 3rem;
   border-top-right-radius: 3rem;
   box-shadow: 3vw 0 0 0 var(--couleur-principal);
+  transition: all .5s ease-in-out;
 }
 .proj-slide {
   width: 30vw;
@@ -1906,7 +1909,7 @@ section.home{
 
     @media (min-width: 501px){
       #nav{
-        mix-blend-mode: difference;
+        /* mix-blend-mode: difference; */
       }
     }
 
