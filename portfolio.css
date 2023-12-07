@@ -127,7 +127,7 @@ html,body{
 
 
 .loader {
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     background: #000;
@@ -165,13 +165,16 @@ html,body{
   left: -25px;
   top: 50%;
   transform: translate(-50%, -50%);
-  transition: transform 2s ease-in-out, opacity 1s linear;
+  transition: transform 1.3s ease-in-out, opacity 1s linear;
   opacity: 1;
 }
 
 
 
-
+/* Ajoutez une classe pour désactiver le défilement */
+.disable-scroll {
+  overflow: hidden;
+}
 
 
 
@@ -938,21 +941,88 @@ section.home{
   display: none;
 }
 .one {
-  background-color: #f86cf3;
-  font-size: 4rem;
+  overflow: hidden;
+  position: relative;
+  justify-content: center;
+  text-align: center;
+  font-size: 4vw;
+}
+.one::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('./projets/design-7232420.jpg'); /* Remplacez par le chemin de votre image */
+  background-size: cover;
+  filter: blur(5px); /* Ajustez la valeur de flou selon vos préférences */
+  z-index: -1;
+  background-position: center;
 }
 .two {
-  background: #fffc99;
+  overflow: hidden;
+  position: relative;
+  margin-left: 3vw;
+}
+.two::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('./projets/code-1076536.jpg'); /* Remplacez par le chemin de votre image */
+  background-size: cover;
+  filter: blur(5px); /* Ajustez la valeur de flou selon vos préférences */
+  z-index: -1;
+  background-position: center;
 }
 .three {
-  background: #eafdcf;
+  overflow: hidden;
+  position: relative;
+  margin-left: 3vw;
+}
+.three::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('./projets/ajouter-profil-imprimante-3d-cura-ultimaker.jpg'); /* Remplacez par le chemin de votre image */
+  background-size: cover;
+  filter: blur(5px); /* Ajustez la valeur de flou selon vos préférences */
+  z-index: -1;
+  background-position: center;
 }
 .four {
   width: 70vw;
   background: #8e835800;
 }
 
+.one, .two, .three, .four {
+  flex-direction: column;
+  padding: 2vw;
+  padding-right: 3vw;
+  -webkit-box-shadow: inset 0px 0px 15px 10px var(--couleur-secondaire); 
+  box-shadow: inset 0px 0px 15px 10px var(--couleur-secondaire);
+}
 
+
+.proj-title{
+  font-size: 4vw;
+  padding-bottom: 1vw;
+}
+
+.proj-bas .proj-year{
+  font-size: 1.5vw;
+  padding-bottom: 3vw;
+}
+
+.proj-bas .proj-texte{
+  font-size: 2vw;
+}
 
 
 
@@ -1298,7 +1368,7 @@ section.home{
   .circle2 {
     height: 2vw;
     width: 2vw;
-    background-color: rgb(255, 255, 255);
+    background-color: var(--couleur-secondaire);
     position: absolute;
     transform: translate(-50%, -50%);
     margin: 0;
@@ -1773,11 +1843,25 @@ section.home{
         height: 100%;
         transform: rotate(0) translateX(0);
       }
-      .one {
-        display: none;
+      .one{
+        font-size: 10vw;
       }
       .four {
         display: none;
+      }
+
+      .one, .two, .three, .four {
+        padding: 5vw;
+      }
+
+      .proj-title{
+        font-size: 10vw;
+      }
+      .proj-bas .proj-year{
+        font-size: 4vw;
+      }
+      .proj-bas .proj-texte{
+        font-size: 5vw;
       }
 
 
@@ -1921,6 +2005,9 @@ section.home{
         /* z-index: 333335000000000000000000; */
         transition: all .5s ease-in-out;
         box-shadow: 0px 6px 15px 5px #0000002d;
+      }
+      .white-circle{
+        display: none;
       }
 
     }
