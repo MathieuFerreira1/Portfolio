@@ -11,7 +11,7 @@ const container = document.getElementById("container");
 const video_anime = document.getElementById("video");
 
 const experience = document.getElementById("experience");
-console.log(experience);
+
 
 
 function revealLetters() {
@@ -20,7 +20,7 @@ function revealLetters() {
         letter.style.transition = 'opacity 0.4s, transform 0.4s';
         letter.style.opacity = '1';
         letter.style.transform = 'translateY(0)';
-    }, 80 * index);
+    }, 60 * index);
   });
 }
 
@@ -49,9 +49,13 @@ window.addEventListener('load', () => {
   document.addEventListener('mousemove', (e) => {
     e.preventDefault();
   });
-
+  
   //empecher le scroll
   document.body.style.overflow = 'hidden';
+  document.body.style.overflowY = 'hidden';
+  document.body.style.overflowX = 'hidden';
+
+  document.body.classList.add('disable-scroll');
 
   //reveal des lettres
   revealLetters();
@@ -59,67 +63,69 @@ window.addEventListener('load', () => {
   //apparition du rond
   setTimeout(() => {
     ball.style.transform = 'scale(70)';
-  }, 2000);
+  }, 1000);
   //retour du rond
   ball.addEventListener('transitionend', () => {
     if (ball.style.transform === 'scale(70)') {
       ball.style.transform = 'scale(0)';
     }
-  }, 3000);
+  }, 2000);
 
   //disparition des lettres
   setTimeout(() => {
       letters.forEach((letter) => {
         letter.style.display = 'none';
       });
-  }, 4000)
+  }, 2000)
 
   //disparition loader
   setTimeout(() => {
     loader.style.display = 'none';
-  }, 5700)
+  }, 3700)
 
   //apparition name et surname
   setTimeout(() => {
     prenom.style.transition = 'opacity 0.4s, transform 0.4s';
     prenom.style.opacity = '1';
     prenom.style.transform = 'translateY(0)';
-  },5700)
+  },3700)
   setTimeout(() => {
     surname.style.transition = 'opacity 0.4s, transform 0.4s';
     surname.style.opacity = '1';
     surname.style.transform = 'translateY(0)';
-  },5800)
+  },3800)
   setTimeout(() => {
     nav.style.top = '0';
-  },5800)
+  },3500)
   setTimeout(() => {
     anime_text.style.opacity = '1';
-  },6800)
+  },4500)
   setTimeout(() => {
     cv.style.transition = 'opacity 1s';
     cv.style.opacity = '1';
-  },7100)
+  },4700)
   setTimeout(() => {
     video_anime.style.transition = 'opacity 2s, transform 1s';
     video_anime.style.opacity = '1';
     video_anime.style.transform = 'translateY(0)';
-  },7300)
+  },4700)
   setTimeout(() => {
     container.style.transition = 'opacity 3s, transform 1s';
     container.style.opacity = '1';
-  },7500)
+  },4800)
   setTimeout(() => {
     document.removeEventListener('mousemove', (e) => {
       e.preventDefault();
     });
     document.body.style.overflow = 'auto';
     document.body.style.overflowX = 'hidden';
-  },8000)
+  },5000)
+  setTimeout(() => {
+    document.body.classList.remove('disable-scroll');
+  }, 5000)
 
 
 });
-
 
 
 
@@ -175,21 +181,25 @@ const root = document.documentElement;
 var boton1 = document.getElementById('BUTTON1');
 var boton2 = document.getElementById('BUTTON2');
 var body = document.querySelector('body');
+const circleMove = document.querySelector(".circle2");
 
 boton1.addEventListener('click', () => {
   boton1.classList.toggle('active');
   boton2.classList.toggle('active');
   nav.classList.toggle('background');
   body.classList.toggle('dark');
+  // circle.classList.toogle('white-circle');
   if (body.classList.contains('dark')){
     root.style.setProperty('--couleur-secondaire', 'black');
     root.style.setProperty('--couleur-principal', 'white');
     root.style.setProperty('--body-principal', '#00000000');
+    circleMove.style.opacity ='0';
   }
   else{
     root.style.setProperty('--couleur-secondaire', 'white');
     root.style.setProperty('--couleur-principal', 'black');
     root.style.setProperty('--body-principal', '#000000');
+    circleMove.style.opacity ='1';
   }
 })
 
@@ -198,15 +208,18 @@ boton2.addEventListener('click', () => {
   boton2.classList.toggle('active');
   body.classList.toggle('dark');
   nav.classList.toggle('background');
+  // circle.classList.toogle('white-circle');
   if (body.classList.contains('dark')){
     root.style.setProperty('--couleur-secondaire', 'black');
     root.style.setProperty('--couleur-principal', 'white');
     root.style.setProperty('--body-principal', '#00000000');
+    circleMove.style.opacity ='0';
   }
   else{
     root.style.setProperty('--couleur-secondaire', 'white');
     root.style.setProperty('--couleur-principal', 'black');
     root.style.setProperty('--body-principal', '#000000');
+    circleMove.style.opacity ='1';
   }
 });
 
